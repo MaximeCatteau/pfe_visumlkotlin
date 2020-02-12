@@ -1,5 +1,6 @@
 package buildJson
 
+import buildJson.attributes.Attributes
 import buildJson.classInfos.Infos
 import buildJson.methods.Methods
 import com.google.gson.JsonObject
@@ -19,6 +20,7 @@ class MyJsonObject {
 
         val infos : Infos = Infos(this.pathName, this.stringifiedClass)
         val methods : Methods = Methods(this.pathName, this.stringifiedClass)
+        val attributes : Attributes = Attributes(this.pathName, this.stringifiedClass)
 
         // Class Infos
         finalObject.addProperty("projet", infos.getProjectName())
@@ -32,6 +34,9 @@ class MyJsonObject {
         finalObject.addProperty("isFinal", infos.isFinal())
         finalObject.addProperty("isAbstract", infos.isAbstract())
         finalObject.addProperty("isStatic", infos.isStatic())
+
+        // Attributes
+        finalObject.add("attributes", attributes.getAttributesArray())
 
         // Methods
         finalObject.add("methods", methods.getMethods())

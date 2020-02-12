@@ -11,7 +11,7 @@ fun main(){
     var className: String = ""
 
     //var pathname = "C:/Users/maxim/IdeaProjects/pfe/src/main/kotlin/buildJson/classInfos/Infos.kt";
-    var pathname = "C:/Users/maxim/pfe_visumlkotlin/pfe/src/main/kotlin/animals/Animal.kt";
+    var pathname = "C:/Users/maxim/pfe_visumlkotlin/pfe/src/main/kotlin/animals/Cat.kt";
     //var pathname = "C:/Users/maxim/IdeaProjects/pfe/src/main/kotlin/animals/AnimalInterface.kt";
 
     val animalClass = File(pathname)
@@ -23,12 +23,12 @@ fun main(){
 
     val classFile = Parser.parseFile(stringifiedClass)
 
-    /*var superclass = emptyList<String?>()
+    var superclass = emptyList<String?>()
     Visitor.visit(classFile) { v, _ ->
-        if (v is Node.Decl.Func){
+        if (v is Node.Decl.Property.Var){
             println("### " + v)
         }
-    }*/
+    }
 
     //println(classes)
 
