@@ -8,6 +8,11 @@ import kastree.ast.Node
 import kastree.ast.Visitor
 import kastree.ast.psi.Parser
 
+/***
+ * @author Maxime CATTEAU
+ *
+ * This class build the attributes part of the JSON Object
+ */
 class Attributes {
 
     private var pathname : String = ""
@@ -56,7 +61,6 @@ class Attributes {
         var superclass = emptyList<String?>()
         Visitor.visit(classFile) { v, _ ->
             if (v is Node.Decl.Property.Var){
-                println("### " + v)
                 jsonArray.add(buildAttribute(v))
             }
         }

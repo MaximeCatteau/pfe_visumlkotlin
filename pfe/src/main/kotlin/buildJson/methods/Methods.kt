@@ -122,8 +122,6 @@ class Methods {
     public fun getParameters(function: Node.Decl.Func) : JsonArray {
         var jsonArray : JsonArray = JsonArray()
 
-        println(function.params)
-
         var rawParams = function.params
 
         for(param in rawParams){
